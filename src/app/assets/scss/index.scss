@@ -1,5 +1,9 @@
-@import 'normalize.css';
 @import 'fonts/fonts';
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
+@import 'base/reset';
 @import 'base/container';
+@import 'layout/header.scss';
+@import 'layout/sign-up-section.scss';
+@import 'layout/cards.scss';
+@import 'layout/form.scss';
