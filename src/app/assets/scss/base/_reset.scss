@@ -1,11 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $background-color;
 }
 
-h1 {
-  margin: 0;
-}
-
+h1,
 p {
   margin: 0;
 }
@@ -30,7 +31,19 @@ button {
   -webkit-appearance: none;
 }
 
-a {
+a,
+ul,
+li {
   all: unset;
   cursor: pointer;
+}
+
+fieldset {
+  padding: 0;
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  outline: none;
 }
