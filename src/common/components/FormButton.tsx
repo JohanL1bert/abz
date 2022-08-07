@@ -1,6 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 
-export const FormButton = (props: any) => {
-  return <button>Sign Up</button>;
+interface IFormSubmitBtn {
+  disabled: boolean;
+  label: string;
+  type: 'submit';
+}
+
+export const FormButton = (props: IFormSubmitBtn) => {
+  const { type, disabled } = props;
+
+  return (
+    <button className="form__submit__btn" type={type} disabled={disabled}>
+      Sign Up
+    </button>
+  );
 };
