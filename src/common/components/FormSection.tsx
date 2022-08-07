@@ -6,7 +6,9 @@ export const FormSection = () => {
     <section>
       <div className="form__inner">
         <div className="form__wrapper">
-          <h2 className="form__heading">Working with POST request</h2>
+          <h2 className="form__heading" id="sign-in">
+            Working with POST request
+          </h2>
           <SignUpForm />
         </div>
       </div>
