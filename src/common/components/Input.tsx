@@ -1,6 +1,13 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import { useState } from 'react';
+
+interface IField {
+  name: string;
+  onBlue: () => void;
+  onChange: () => void;
+  value: string;
+}
 
 export interface IInputProps {
   id: string;
@@ -8,19 +15,37 @@ export interface IInputProps {
   placeholder: string;
   errors: string;
   touched: string;
+  field: IField;
+  name: string;
   onChange: () => void;
   onBlur: () => void;
 }
 
 export const Input = (props: IInputProps) => {
-  const { id, type, placeholder, errors, touched, onChange, onBlur } = props;
-
-  const [isShow, setIsShow] = useState<boolean>(false);
+  const { id, type, placeholder, name, errors, touched, onChange, onBlur } = props;
+  const colorError = { color: errors && touched ? '#CB3D40' : '' };
 
   return (
-    <fieldset>
-      {isShow && <legend>label</legend>}
-      <input />
-    </fieldset>
+    <div className="form__group">
+      <input
+        type={type}
+        id={id}
+        name={name}
+        className="form__input__field"
+        style={{ borderColor: errors && touched ? '#CB3D40' : '' }}
+        placeholder={placeholder}
+        autoComplete="off"
+        onChange={onChange}
+        onBlur={onBlur}
+      />
+      <label htmlFor={id} className="form__input__label" style={colorError}>
+        {placeholder}
+      </label>
+      {touched && errors && (
+        <span className="form__input__error" style={colorError}>
+          {errors}
+        </span>
+      )}
+    </div>
   );
 };
