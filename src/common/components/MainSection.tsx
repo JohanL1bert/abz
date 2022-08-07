@@ -14,7 +14,9 @@ export const MainSection = () => {
                 building web interfaces with accessibility in mind. They should also be excited to
                 learn, as the world of Front-End Development keeps evolving.
               </div>
-              <div className="main__btn">Sign up</div>
+              <a href="#sign-in" className="main__btn">
+                Sign up
+              </a>
             </div>
           </div>
         </div>
