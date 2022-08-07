@@ -1,0 +1,12 @@
+.form {
+  &__inner {
+  }
+
+  &__wrapper {
+    @include center-style;
+    flex-direction: column;
+  }
+
+  &__heading {
+  }
+}

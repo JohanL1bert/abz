@@ -1,0 +1,52 @@
+.main {
+  &__overflow {
+    overflow: hidden;
+  }
+
+  &__inner {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../../image/img/pexels-alexandr-podvalny-1227513.jpeg');
+    background-position: 49% 70%;
+    background-repeat: no-repeat;
+  }
+
+  &__wrap {
+    @include center-style;
+    height: 650px;
+  }
+
+  &__wrapper {
+    width: 380px;
+    height: 323px;
+    @include center-style;
+    flex-direction: column;
+  }
+
+  &__heading {
+    @include heading-one;
+    text-align: center;
+    color: $text-color;
+    height: 80px;
+    margin-bottom: 21px;
+  }
+
+  &__description {
+    @include body-style;
+    text-align: center;
+    color: $text-color;
+    height: 156px;
+    margin-bottom: 32px;
+  }
+
+  &__btn {
+    @include body-style;
+    @include button-style;
+    @include center-style;
+    @include size(34px, 100px);
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-btn-color;
+    }
+  }
+}

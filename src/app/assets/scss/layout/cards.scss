@@ -1,0 +1,87 @@
+.cards {
+  &__inner {
+  }
+
+  &__wrapper {
+    margin-top: 140px;
+  }
+
+  &__heading {
+    @include heading-one;
+
+    &__wrapper {
+      @include center-style;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    &__inner {
+      @include center-style;
+      margin-top: 50px;
+      margin-bottom: 140px;
+    }
+
+    &__show {
+      @include size(34px, 120px);
+      @include button-style;
+      @include center-style;
+      @include body-style;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-btn-color;
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 29px;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    justify-items: center;
+    justify-content: center;
+  }
+}
+
+.card {
+  &__wrapper {
+    width: 330px; //change by widht
+    height: 214px;
+    padding: 20px;
+    border-radius: 10px;
+    background: $text-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px 0;
+  }
+
+  &__inner {
+    @include center-style;
+    flex-direction: column;
+    height: 78px;
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    @include body-style;
+  }
+
+  &__position {
+    @include body-style;
+  }
+
+  &__email {
+    @include body-style;
+  }
+
+  &__phone {
+    @include body-style;
+  }
+}
