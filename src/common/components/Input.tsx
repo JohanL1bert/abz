@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 
 interface IField {
@@ -24,7 +23,6 @@ export interface IInputProps {
 export const Input = (props: IInputProps) => {
   const { id, type, placeholder, name, errors, touched, onChange, onBlur } = props;
   const colorError = { color: errors && touched ? '#CB3D40' : '' };
-
   return (
     <div className="form__group">
       <input
