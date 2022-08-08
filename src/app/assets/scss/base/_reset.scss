@@ -47,3 +47,7 @@ input[type='radio'] {
   border-radius: 50%;
   outline: none;
 }
+
+input[type='file'] {
+  -webkit-appearance: none;
+}
