@@ -1,0 +1,10 @@
+.error {
+  position: absolute;
+  top: 65px;
+  left: 10px;
+  width: 300px;
+  height: 20px;
+  color: red;
+  @include body-style;
+  overflow-wrap: break-word;
+}
