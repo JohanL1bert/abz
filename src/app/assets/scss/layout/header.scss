@@ -1,0 +1,83 @@
+.header {
+  &-rectangle {
+    height: 60px;
+    background-color: $rectangle-color;
+  }
+
+  &__inner {
+    background-color: $header-color;
+  }
+
+  &__wrapper {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    background-image: url('../../image/svg/Logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 104px;
+    height: 26px;
+
+    @media (max-width: $screen-lg-hd) {
+      margin-left: 60px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-left: 32px;
+    }
+
+    @media (max-width: $screen-xs-small) {
+      margin-left: 16px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    width: 210px;
+    height: 34px;
+    @media (max-width: $screen-lg-hd) {
+      margin-right: 60px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-right: 32px;
+    }
+
+    @media (max-width: $screen-xs-small) {
+      margin-right: 16px;
+    }
+  }
+
+  &__btn {
+    &-user {
+      @include size(34px, 100px);
+      @include button-style;
+      @include center-style;
+      @include body-style;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-btn-color;
+      }
+    }
+
+    &-sign-up {
+      @include size(34px, 100px);
+      @include button-style;
+      @include center-style;
+      @include body-style;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-btn-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.cards {
+  &__wrapper {
+    margin-top: 140px;
+  }
+
+  &__heading {
+    @include heading-one;
+    margin: 0;
+
+    &__wrapper {
+      @include center-style;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    &__inner {
+      @include center-style;
+      margin-top: 50px;
+      margin-bottom: 140px;
+
+      @media (max-width: $screen-sm) {
+        margin-top: 46px;
+      }
+    }
+
+    &__show {
+      @include size(34px, 120px);
+      @include button-style;
+      @include center-style;
+      @include body-style;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-btn-color;
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    justify-items: center;
+    justify-content: center;
+
+    @media (max-width: $screen-xl) {
+      gap: 29px 0;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    @media (max-width: $screen-md) {
+      gap: 29px 0;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    @media (max-width: $screen-sm) {
+      gap: 16px;
+    }
+
+    @media (max-width: $screen-xs-small) {
+      gap: 20px;
+    }
+  }
+}
+
+.card {
+  &__wrapper {
+    width: 330px;
+    height: 214px;
+    padding: 20px;
+    border-radius: 10px;
+    background: $text-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px 0;
+
+    @media (max-width: $screen-xl) {
+      @include size(212px, 240px);
+    }
+
+    @media (max-width: $screen-md) {
+      @include size(212px, 240px);
+    }
+
+    @media (max-width: $screen-sm) {
+      @include size(212px, 302px);
+      gap: 17px 0;
+    }
+  }
+
+  &__inner {
+    @include center-style;
+    flex-direction: column;
+    height: 78px;
+  }
+
+  &__img {
+    margin-top: 5px;
+    @include size(70px, 70px);
+    border-radius: 50%;
+
+    @media (max-width: $screen-md) {
+      margin: 0;
+    }
+  }
+
+  &__name {
+    @include body-style;
+  }
+
+  &__position {
+    @include body-style;
+  }
+
+  &__email {
+    @include body-style;
+  }
+
+  &__phone {
+    @include body-style;
+  }
+}

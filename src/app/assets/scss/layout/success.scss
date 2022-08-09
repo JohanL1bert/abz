@@ -1,0 +1,19 @@
+.success {
+  &__inner {
+    @include center-style;
+    flex-direction: column;
+    gap: 50px 0;
+    margin-bottom: 100px;
+  }
+
+  &__heading {
+    @include heading-one;
+  }
+
+  &__img {
+    background-image: url('../../image/svg/success-image.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include size(290px, 328px);
+  }
+}

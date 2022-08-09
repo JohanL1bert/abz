@@ -1,0 +1,253 @@
+.form {
+  &__input {
+    &__wrap {
+      @include center-style;
+      flex-direction: column;
+      gap: 36px 0;
+      margin-top: 30px;
+
+      @media (max-width: $screen-md) {
+        gap: 35px 0;
+      }
+    }
+  }
+
+  &__submit {
+    &__btn {
+      @include body-style;
+      @include button-style;
+
+      @include center-style;
+      @include size(34px, 100px);
+      cursor: pointer;
+      margin-top: 50px;
+      margin-bottom: 100px;
+
+      &:hover {
+        background-color: $hover-btn-color;
+      }
+
+      &:disabled {
+        background-color: $disable-btn-color;
+        color: $text-color;
+      }
+    }
+
+    &__inner {
+      @include center-style;
+    }
+  }
+}
+
+.form__upload {
+  &__wrap {
+    @include center-style;
+    margin-top: 47px;
+  }
+
+  &__inner {
+    @include size(54px, 380px);
+    position: relative;
+
+    @media (max-width: $screen-xs-medium) {
+      width: 328px;
+    }
+  }
+
+  &__file {
+    display: none;
+  }
+
+  &__label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    border: 1px solid $border-input-color;
+    cursor: pointer;
+    @include body-style;
+    overflow: hidden;
+
+    &::before {
+      content: 'Upload';
+      left: 0;
+      display: flex;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid black;
+      margin-right: 10px;
+      cursor: pointer;
+      @include body-style;
+    }
+
+    &-active {
+      &::before {
+        border-color: inherit;
+      }
+    }
+  }
+
+  &__input {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: transparent;
+    opacity: 0;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -30px;
+    left: 10px;
+    color: #cb3d40;
+  }
+}
+
+.form__radio {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    margin-top: 43px;
+    @include size(161px, 380px);
+
+    @media (max-width: $screen-md) {
+      width: 200px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 7px 0;
+  }
+
+  &__heading {
+    height: 25px;
+    margin-bottom: 11px;
+    @include body-style;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    height: 26px;
+  }
+
+  &__input {
+    cursor: pointer;
+    @include size(20px, 20px);
+    border: 1px solid #d0cfcf;
+
+    &:checked {
+      border: 1px solid #00bdd3;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 60%;
+      margin: 21% auto;
+      border-radius: 50%;
+      transition: 0.5s ease-in-out;
+    }
+
+    &:checked:before {
+      background-color: $radio-btn-color;
+    }
+  }
+
+  &__label {
+    @include body-style;
+    cursor: pointer;
+  }
+}
+
+.form {
+  &__group {
+    @include size(54px, 380px);
+    position: relative;
+    padding-top: 15px;
+
+    @media (max-width: $screen-md) {
+      padding-top: 17px;
+    }
+
+    @media (max-width: $screen-xs-medium) {
+      width: 328px;
+    }
+  }
+
+  &__input {
+    &__field {
+      width: 94%;
+      outline: 0;
+      border: 1px solid $border-input-color;
+      height: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: transparent;
+      @include body-style;
+      transition: 0.3s ease;
+      border-radius: 5px;
+
+      @media (max-width: $screen-md) {
+        padding-right: 13px;
+        height: 53px;
+      }
+    }
+
+    &__label {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      padding: 3.5px;
+      background: $background-color;
+      @include body-style;
+      color: #999999;
+      transition: 0.3s ease;
+    }
+
+    &__error {
+      position: absolute;
+      top: 80px;
+      left: 10px;
+    }
+  }
+}
+
+.form__input__field::placeholder {
+  color: transparent;
+}
+
+.form__input__field:placeholder-shown ~ .form__input__label {
+  @include body-style;
+  top: 30px;
+}
+
+.form__input__field:focus {
+  border-image: linear-gradient(to right, #b5ce2b, #d7eae9);
+  border-image-slice: 1;
+}
+
+.form__input__field:focus ~ .form__input__label {
+  display: block;
+  position: absolute;
+  top: 0;
+  padding: 3.5px;
+  background: $background-color;
+  @include body-style;
+  color: #99aa38;
+}

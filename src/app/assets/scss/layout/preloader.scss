@@ -1,0 +1,40 @@
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $radio-btn-color transparent transparent transparent;
+}
+
+.loader .loader__one {
+  animation-delay: -0.45s;
+}
+
+.loader .loader__two {
+  animation-delay: -0.3s;
+}
+
+.loader .loader__three {
+  animation-delay: -0.15s;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
