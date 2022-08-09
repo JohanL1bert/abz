@@ -1,17 +1,16 @@
 .cards {
-  &__inner {
-  }
-
   &__wrapper {
     margin-top: 140px;
   }
 
   &__heading {
     @include heading-one;
+    margin: 0;
 
     &__wrapper {
       @include center-style;
       text-align: center;
+      margin-bottom: 50px;
     }
   }
 
@@ -20,6 +19,10 @@
       @include center-style;
       margin-top: 50px;
       margin-bottom: 140px;
+
+      @media (max-width: $screen-sm) {
+        margin-top: 46px;
+      }
     }
 
     &__show {
@@ -37,16 +40,34 @@
 
   &__items {
     display: grid;
-    gap: 29px;
+    gap: 28px;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     justify-items: center;
     justify-content: center;
+
+    @media (max-width: $screen-xl) {
+      gap: 29px 0;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    @media (max-width: $screen-md) {
+      gap: 29px 0;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    @media (max-width: $screen-sm) {
+      gap: 16px;
+    }
+
+    @media (max-width: $screen-xs-small) {
+      gap: 20px;
+    }
   }
 }
 
 .card {
   &__wrapper {
-    width: 330px; //change by widht
+    width: 330px;
     height: 214px;
     padding: 20px;
     border-radius: 10px;
@@ -55,6 +76,19 @@
     align-items: center;
     flex-direction: column;
     gap: 20px 0;
+
+    @media (max-width: $screen-xl) {
+      @include size(212px, 240px);
+    }
+
+    @media (max-width: $screen-md) {
+      @include size(212px, 240px);
+    }
+
+    @media (max-width: $screen-sm) {
+      @include size(212px, 302px);
+      gap: 17px 0;
+    }
   }
 
   &__inner {
@@ -64,9 +98,13 @@
   }
 
   &__img {
-    width: 70px;
-    height: 70px;
+    margin-top: 5px;
+    @include size(70px, 70px);
     border-radius: 50%;
+
+    @media (max-width: $screen-md) {
+      margin: 0;
+    }
   }
 
   &__name {
