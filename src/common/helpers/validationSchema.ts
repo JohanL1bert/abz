@@ -26,6 +26,7 @@ export const validationSchema = yup.object().shape({
   position_id: yup.number().min(1, 'Min one').required('Required'),
   photo: yup
     .mixed()
+    .nullable()
     .test('fileSize', 'File too large', (value) => value && value.size <= FILE_SIZE)
     .test(
       'fileFormat',
