@@ -1,12 +1,31 @@
 .form {
   &__inner {
+    @media (max-width: $screen-sm) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__wrapper {
     @include center-style;
     flex-direction: column;
+
+    @media (max-width: $screen-sm) {
+      width: 600px;
+    }
+
+    @media (max-width: 660px) {
+      width: 350px;
+    }
+
+    @media (max-width: $screen-xs-medium) {
+      width: 328px;
+    }
   }
 
   &__heading {
+    @include heading-one;
+    margin: 0;
+    text-align: center;
   }
 }
