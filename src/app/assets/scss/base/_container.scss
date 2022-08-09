@@ -6,4 +6,19 @@
 .inner__container {
   max-width: 1600px;
   margin: 0 auto;
+
+  @media (max-width: $screen-md) {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  @media (max-width: $screen-xs-medium) {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
