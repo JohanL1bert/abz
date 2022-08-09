@@ -13,6 +13,10 @@
   &__wrap {
     @include center-style;
     height: 650px;
+
+    @media (max-width: $screen-sm) {
+      height: 503px;
+    }
   }
 
   &__wrapper {
@@ -20,6 +24,13 @@
     height: 323px;
     @include center-style;
     flex-direction: column;
+
+    @media (max-width: $screen-xs-small) {
+      width: 328px;
+      height: 420px;
+      gap: 36px;
+      justify-content: start;
+    }
   }
 
   &__heading {
@@ -47,6 +58,10 @@
 
     &:hover {
       background-color: $hover-btn-color;
+    }
+
+    @media (max-width: $screen-xs-small) {
+      margin-top: -9px;
     }
   }
 }
