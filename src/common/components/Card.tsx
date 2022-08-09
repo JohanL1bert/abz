@@ -4,6 +4,7 @@ import { CustomTooltip } from 'common/components/CustomTooltip';
 
 export const Card = (props: IUser) => {
   const { name, email, phone, photo, position } = props;
+
   return (
     <div className="card__wrapper">
       <img src={photo} alt="" className="card__img" />
