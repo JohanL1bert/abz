@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { makeAutoObservable } from 'mobx';
-import { TUserState, IUserStore, IUserResponse, IUser } from 'store/getUser/interface';
+import { TUserState, IUserStore, IUserResponse, IUser, ICreateUser } from 'store/getUser/interface';
 import { LoadStatus } from 'common/const/load-status.const';
 import { TLoad } from 'store/getPosition/interface';
 import { UserController } from 'store/getUser/user.controller';
@@ -9,6 +8,9 @@ import { UserService } from 'store/getUser/user.service';
 export class UserStore implements IUserStore {
   loading: TLoad = LoadStatus.pending;
   isStarted: boolean = false;
+
+  isAuth: boolean = false;
+  err: string | null = null;
 
   store: TUserState = {
     count: null,
@@ -29,6 +31,26 @@ export class UserStore implements IUserStore {
 
   loadStatus(load: TLoad) {
     this.loading = load;
+  }
+
+  errorStatus(err: string) {
+    this.err = err;
+  }
+
+  auth(auth: ICreateUser) {
+    this.isAuth = auth.success;
+    this.store = {
+      count: null,
+      links: {
+        next_url: null,
+        prev_url: null,
+      },
+      page: null,
+      success: null,
+      total_pages: null,
+      total_users: null,
+      users: [],
+    };
   }
 
   upload(data: IUserResponse) {
@@ -62,6 +84,7 @@ export class UserStore implements IUserStore {
       .sort((a, b) => b.registration_timestamp - a.registration_timestamp);
   }
 }
+
 const getUserStore = new UserStore();
 const service = new UserService(getUserStore);
 const userController = new UserController(service);
