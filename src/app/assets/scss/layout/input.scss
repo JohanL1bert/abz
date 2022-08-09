@@ -3,7 +3,12 @@
     &__wrap {
       @include center-style;
       flex-direction: column;
-      gap: 30px 0;
+      gap: 36px 0;
+      margin-top: 30px;
+
+      @media (max-width: $screen-md) {
+        gap: 35px 0;
+      }
     }
   }
 
@@ -43,6 +48,10 @@
   &__inner {
     @include size(54px, 380px);
     position: relative;
+
+    @media (max-width: $screen-xs-medium) {
+      width: 328px;
+    }
   }
 
   &__file {
@@ -60,7 +69,7 @@
     border: 1px solid $border-input-color;
     cursor: pointer;
     @include body-style;
-    cursor: pointer;
+    overflow: hidden;
 
     &::before {
       content: 'Upload';
@@ -110,6 +119,10 @@
     flex-direction: column;
     margin-top: 43px;
     @include size(161px, 380px);
+
+    @media (max-width: $screen-md) {
+      width: 200px;
+    }
   }
 
   &__items {
@@ -166,6 +179,14 @@
     @include size(54px, 380px);
     position: relative;
     padding-top: 15px;
+
+    @media (max-width: $screen-md) {
+      padding-top: 17px;
+    }
+
+    @media (max-width: $screen-xs-medium) {
+      width: 328px;
+    }
   }
 
   &__input {
@@ -180,6 +201,11 @@
       @include body-style;
       transition: 0.3s ease;
       border-radius: 5px;
+
+      @media (max-width: $screen-md) {
+        padding-right: 13px;
+        height: 53px;
+      }
     }
 
     &__label {
