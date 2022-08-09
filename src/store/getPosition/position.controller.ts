@@ -1,11 +1,11 @@
 /* eslint-disable no-useless-constructor */
 import { AxiosResponse } from 'axios';
-import { IPositionResponse } from 'store/getPosition/interface';
+import { IPositionResponse, IPositionController } from 'store/getPosition/interface';
 import { PositionService } from 'store/getPosition/position.service';
 import { apiService } from 'common/http.service/api';
 import { LoadStatus } from 'common/const/load-status.const';
 
-export class PositionController {
+export class PositionController implements IPositionController {
   constructor(private readonly positionService: PositionService) {}
 
   async uploadPosition() {
