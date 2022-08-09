@@ -23,6 +23,18 @@
     background-repeat: no-repeat;
     width: 104px;
     height: 26px;
+
+    @media (max-width: $screen-lg-hd) {
+      margin-left: 60px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-left: 32px;
+    }
+
+    @media (max-width: $screen-xs-small) {
+      margin-left: 16px;
+    }
   }
 
   &__items {
@@ -30,6 +42,17 @@
     justify-content: space-between;
     width: 210px;
     height: 34px;
+    @media (max-width: $screen-lg-hd) {
+      margin-right: 60px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-right: 32px;
+    }
+
+    @media (max-width: $screen-xs-small) {
+      margin-right: 16px;
+    }
   }
 
   &__btn {
@@ -57,7 +80,4 @@
       }
     }
   }
-}
-
-@media (max-width: 1920px) {
 }
