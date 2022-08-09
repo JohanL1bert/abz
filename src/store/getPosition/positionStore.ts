@@ -1,12 +1,16 @@
 import { makeAutoObservable } from 'mobx';
-import { IPositionStore, TLoad, IPositionResponse } from 'store/getPosition/interface';
+import { IPositionStore, TLoad, TPosition, IPositionResponse } from 'store/getPosition/interface';
 import { PositionController } from 'store/getPosition/position.controller';
 import { PositionService } from 'store/getPosition/position.service';
 import { LoadStatus } from 'common/const/load-status.const';
 
 export class PositionStore implements IPositionStore {
   loadingPos: TLoad = LoadStatus.pending;
-  position: any = {};
+
+  position: TPosition = {
+    success: false,
+    positions: null,
+  };
 
   constructor() {
     makeAutoObservable(this);
@@ -17,7 +21,7 @@ export class PositionStore implements IPositionStore {
   }
 
   upload(data: IPositionResponse) {
-    this.position = data;
+    this.position = { ...data };
   }
 }
 
