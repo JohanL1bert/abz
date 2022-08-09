@@ -37,15 +37,32 @@ export interface IUserStore {
   isStarted: boolean;
   store: TUserState;
   loadStatus(load: TLoad): void;
+  auth(auth: ICreateUser): void;
   upload(data: IUserResponse): void;
   get usersByDate(): Array<IUser>;
 }
 
 export interface IUserController {
   uploadUsers(page: number): void;
+  getToken(): void;
+  createUser(formData: FormData): void;
 }
 
 export interface IUserService {
   loadService(load: TLoad): void;
+  auth(auth: ICreateUser): void;
   pagination(data: IUserResponse): void;
 }
+
+export interface IToken {
+  success: boolean;
+  token: string;
+}
+
+export interface ICreateUser {
+  message: string;
+  success: boolean;
+  user_id: number;
+}
+
+export type TErrorMessage = Pick<IToken, 'success'> & { message: string };
