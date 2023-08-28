@@ -67,7 +67,8 @@
 
 .card {
   &__wrapper {
-    width: 330px;
+    max-width: 330px;
+    width: 100%;
     height: 214px;
     padding: 20px;
     border-radius: 10px;
@@ -109,17 +110,21 @@
 
   &__name {
     @include body-style;
+    max-width: 240px;
   }
 
   &__position {
     @include body-style;
+    max-width: 240px;
   }
 
   &__email {
     @include body-style;
+    max-width: 240px;
   }
 
   &__phone {
     @include body-style;
+    max-width: 240px;
   }
 }
