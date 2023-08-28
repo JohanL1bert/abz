@@ -110,21 +110,25 @@
 
   &__name {
     @include body-style;
+    @include dots-card;
     max-width: 240px;
   }
 
   &__position {
     @include body-style;
+    @include dots-card;
     max-width: 240px;
   }
 
   &__email {
     @include body-style;
+    @include dots-card;
     max-width: 240px;
   }
 
   &__phone {
     @include body-style;
+    @include dots-card;
     max-width: 240px;
   }
 }
